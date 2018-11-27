@@ -1,23 +1,16 @@
 #Create a histogram from the alphabetTable.csv output
 
 #Import Dataset
-alphabetTable <- read.csv("~/Documents/UBC/Term 7 - Sept. 2018/STAT 545/Homework/Hmk9/hw09-Bill1111/alphabetTable.csv", sep="")
+alphabetTable <- read.csv("alphabetTable.csv")
 
-names(alphabetTable)
+library(ggplot2)
 
-alphabetTable %>% 
-  ggplot(aes(letters, alphabetCount)) +
-  geom_histogram()
-
+jpeg("alphaLetterPlot.jpg", width = 350, height = 350)
 
 ggplot(alphabetTable, aes(x = letters, y = alphabetCount)) +
   geom_bar(fill = "#0073C2FF", stat = "identity") +
   xlab("Letters") + 
   ylab("Number of Words") + 
-  ggtitle("Number of Words Starting with Each Letter of the Alphabet")
+  ggtitle("Words Starting with Each Letter of the Alphabet")
 
-
-
-
-+ 
-  theme_pubclean()
+ggsave("alphaLetterPlot.jpg")

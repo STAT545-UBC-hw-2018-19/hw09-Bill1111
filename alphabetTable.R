@@ -1,4 +1,7 @@
+#Create Table with counts for words that start with each letter of the alphabet
+
 library(tidyverse)
+library(readr)
 words <- readLines("words.txt")
 
 starts_a <- length(str_subset(words, pattern = "(^A|^a)"))
@@ -58,7 +61,8 @@ alphabetCount <- c(starts_a,
 
 alphabetTable <- data.frame(letters, alphabetCount)
 
-
+write_csv(alphabetTable, "alphabetTable.csv")
+#I'm getting an extra column with numbers here. How to get rid of that? Once I do that I can do the analysis in the RMD
 
 
 

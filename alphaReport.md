@@ -8,10 +8,9 @@ output:
 ---
 
 
-```{r load-data}
 
+```r
 alphabetTable <- read.csv("alphabetTable.csv")
-
 ```
 
 I decided to count the number of words that started with each letter of the alphabet.
